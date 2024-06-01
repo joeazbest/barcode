@@ -131,7 +131,7 @@ $RECYCLE.BIN/
 .DS_Store
 
 _NCrunch*
-Script/CreateHtml/.vs/CreateHtml/v17/TestStore/0/000.testlog
-Script/CreateHtml/.vs/CreateHtml/v17/TestStore/0/testlog.manifest
-Script/CreateHtml/.vs/CreateHtml/FileContentIndex/1e2c05f4-2751-4900-8cd5-10ef53266ad3.vsidx
+Script/CreateHtml/.vs/CreateHtml/v17/TestStore/0/*.testlog
+Script/CreateHtml/.vs/CreateHtml/v17/TestStore/0/*.manifest
+Script/CreateHtml/.vs/CreateHtml/FileContentIndex/*.vsidx
 Script/CreateHtml/.vs/CreateHtml/DesignTimeBuild/.dtbcache.v2

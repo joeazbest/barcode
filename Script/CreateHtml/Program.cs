@@ -4,26 +4,38 @@
 	{
 		private static void Main(string[] args)
 		{
-			var directoryPath = @"..\..\..\..\..\PDFBarcode\EAN8";
-			var directoryAbsoluthPath = Path.GetFullPath(directoryPath);
-			var exampleRelativePath = @"..\..\..\..\..\PDFBarcode\EAN8template.html";
-			var exampleAbsoluthPath = Path.GetFullPath(exampleRelativePath);
+			var EAN8directoryPath = @"..\..\..\..\..\PDFBarcode\EAN8";
+			var EAN8directoryAbsoluthPath = Path.GetFullPath(EAN8directoryPath);
+			var EAN8exampleRelativePath = @"..\..\..\..\..\PDFBarcode\EAN8template.html";
+			var EAN8exampleAbsoluthPath = Path.GetFullPath(EAN8exampleRelativePath);
 
-			var files = Directory.GetFiles(directoryAbsoluthPath);
+			var EAN13directoryPath = @"..\..\..\..\..\PDFBarcode\EAN13";
+			var EAN13directoryAbsoluthPath = Path.GetFullPath(EAN13directoryPath);
+			var EAN13exampleRelativePath = @"..\..\..\..\..\PDFBarcode\EAN13template.html";
+			var EAN13exampleAbsoluthPath = Path.GetFullPath(EAN13exampleRelativePath);
+
+			UpdateFiles(EAN8directoryAbsoluthPath, EAN8exampleAbsoluthPath);
+			UpdateFiles(EAN13directoryAbsoluthPath, EAN13exampleAbsoluthPath);
+		}
+
+		private static void UpdateFiles(string directoryAbsoluthPath, string exampleAbsoluthPath)
+		{
+			var files = Directory.GetFiles(directoryAbsoluthPath, "*.html");
 			var exampleFile = File.ReadAllLines(exampleAbsoluthPath);
 
 			foreach (var file in files)
 			{
 				var fileLines = File.ReadAllLines(file);
-				var i = 0;
-				foreach (var line in exampleFile)
-				{
-					if (string.IsNullOrEmpty(line)) continue;
 
-					i++;
+				for (var i = 0; i < exampleFile.Length; i++)
+				{
+					var line = exampleFile[i];
+					if (string.IsNullOrEmpty(line)) continue;
 
 					fileLines[i] = line;
 				}
+
+				File.WriteAllLines(file, fileLines);
 			}
 		}
 	}
