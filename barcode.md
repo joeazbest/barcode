@@ -1,6 +1,7 @@
 # barcode
 
 - https://barcodes.pro/generator/
+- všechno HTML otevřít ve firefoxu a exportovat do pdf za pomoci tisku a volby "uložit jako pdf"
 
 ## 21 x 8
 
